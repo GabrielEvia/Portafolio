@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gabriel Evia — Portafolio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Select2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/index.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg shadow-sm"
+      style="background-color: var(--bg-white)"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Gabriel Evia</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="src/CV GABRIEL EVIA.pdf"
+                >CV</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Proyectos</a>
+            </li>
+          </ul>
+          <button
+            id="themeToggleBtn"
+            class="btn btn-link theme-toggle ms-3"
+            aria-label="Cambiar tema"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Proyectos -->
+    <section class="projects py-5">
+      <div class="container">
+        <div class="text text-center text-lg-start mb-5">
+          <h2 class="fw-light">Proyectos</h2>
+          <div class="project-filters row">
+            <div class="col-md-3">
+              <label for="relatedFilter" class="form-label">Categoría</label>
+              <select id="relatedFilter" class="form-select select2">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label for="enterpriseFilter" class="form-label">Empresa</label>
+              <select id="enterpriseFilter" class="form-select select2">
+                <option value="">Todos</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label for="platformFilter" class="form-label">Plataforma</label>
+              <select id="platformFilter" class="form-select select2">
+                <option value="">Todas</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label for="techFilter" class="form-label">Tecnología</label>
+              <select id="techFilter" class="form-select select2">
+                <option value="">Todas</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row projectsRow2" id="projectsRow"></div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact">
+      <div class="container">
+        <div class="text pe-lg-5 text pe-lg-5 mb-5">
+          <h2 class="fw-light text-center">Contacto</h2>
+        </div>
+        <p>
+          Si deseas ponerte en contacto conmigo, puedes enviarme un correo a
+          <a href="mailto:eviagabrielh15@gmail.com">eviagabrielh15@gmail.com</a>
+          o conectarte conmigo a través de mis redes sociales.
+        </p>
+        <div class="social-links">
+          <a
+            href="https://github.com/GabrielEvia"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="src/img/tecnologies/GitHub.svg" alt="GitHub" />
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gabriel-h-evia-433071348/"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="src/img/tecnologies/LinkedIn.svg" alt="LinkedIn" />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://wa.me/5217206379944?text=Hola%2C%20Gabriel%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20mucho%20contactarte"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="src/img/tecnologies/whatsapp.svg" alt="WhatsApp" />
+            <span>WhatsApp</span>
+          </a>
+        </div>
+        <form
+          id="contactForm"
+          action="https://formsubmit.co/eviagabrielh15@gmail.com"
+          method="POST"
+          class="contact-form row g-3"
+        >
+          <!-- Configuraciones ocultas para formsubmit -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Gracias por tu mensaje. Te responderé pronto."
+          />
+
+          <!-- Campo nombre -->
+          <div class="col-md-12">
+            <input
+              type="text"
+              name="name"
+              class="form-control bg-light text-dark dark-mode"
+              placeholder="Tu nombre"
+              required
+            />
+          </div>
+
+          <!-- Campo email -->
+          <div class="col-md-12">
+            <input
+              type="email"
+              name="email"
+              class="form-control bg-light text-dark dark-mode"
+              placeholder="Tu correo"
+              required
+            />
+          </div>
+
+          <!-- Campo mensaje -->
+          <div class="col-md-12">
+            <textarea
+              name="message"
+              rows="5"
+              class="form-control bg-light text-dark dark-mode"
+              placeholder="Tu mensaje"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Botón de envío -->
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary w-100">
+              Enviar mensaje
+            </button>
+          </div>
+        </form>
+
+        <div id="thankYouMessage" class="mt-4" style="display: none">
+          <h3>Gracias por tu mensaje</h3>
+          <p>Te responderé lo antes posible.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal" id="certModal" onclick="closeModal(event)">
+      <img
+        class="modal-content"
+        id="modalImg"
+        onclick="event.stopPropagation()"
+      />
+    </div>
+
+    <!-- Proyectos -->
+    <div
+      class="modal fade"
+      id="projectModal"
+      tabindex="-1"
+      aria-hidden="true"
+      onclick="closeModal(event)"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <div class="row g-0">
+            <div class="col-md-6 p-3">
+              <div
+                id="projectCarouselInner"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner" id="projectCarouselItems">
+                  <!-- JS generará las .carousel-item aquí -->
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#projectCarouselInner"
+                  data-bs-slide="prev"
+                >
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#projectCarouselInner"
+                  data-bs-slide="next"
+                >
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+              </div>
+
+              <h5 class="mt-3">Relacionados</h5>
+              <div id="relatedProjects">
+                <!-- JS añadirá tarjetas relacionadas -->
+              </div>
+            </div>
+            <div class="col-md-6 p-3">
+              <div class="d-flex gap-2 mb-3" id="modalPlatformIcons"></div>
+              <h2 id="modalProjectTitle"></h2>
+              <div class="d-flex gap-2 mb-3" id="modalTechIcons"></div>
+              <p id="modalProjectDesc"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="src/js/theme.js"></script>
+    <script src="src/js/tecnologies.js"></script>
+    <script src="src/js/showProjects.js"></script>
+    <script src="src/js/projects.js"></script>
+    <script>
+      function openModal(src) {
+        const modalImg = document.getElementById("modalImg");
+        if (modalImg) modalImg.src = src;
+
+        const certModal = document.getElementById("certModal");
+        if (certModal) {
+          const modal = new bootstrap.Modal(certModal);
+          modal.show();
+        }
+      }
+
+      window.openProjectModal = function (projectId) {
+        const project = projects.find((p) => p.id === projectId);
+        if (!project) return;
+
+        const modalElement = document.getElementById("projectModal");
+        if (!modalElement) return;
+
+        const bsModal = new bootstrap.Modal(modalElement);
+        bsModal.show();
+
+        // Elementos
+        const carouselInner = modalElement.querySelector(
+          "#projectCarouselItems"
+        );
+        const titleEl = modalElement.querySelector("#modalProjectTitle");
+        const descEl = modalElement.querySelector("#modalProjectDesc");
+        const platformsEl = modalElement.querySelector("#modalPlatformIcons");
+        const techEl = modalElement.querySelector("#modalTechIcons");
+        const relatedContainer = modalElement.querySelector("#relatedProjects");
+
+        // Título y descripción
+        if (titleEl) titleEl.textContent = project.title;
+        if (descEl)
+          descEl.innerHTML = project.descriptionDeep.replace(/\n/g, "<br>");
+
+        // Carrusel
+        if (carouselInner) {
+          carouselInner.innerHTML = "";
+          project.images?.forEach((src, idx) => {
+            const item = document.createElement("div");
+            item.className = "carousel-item" + (idx === 0 ? " active" : "");
+
+            const img = document.createElement("img");
+            img.src = src;
+            img.className = "d-block w-100";
+            img.alt = `${project.title} - imagen ${idx + 1}`;
+
+            item.appendChild(img);
+            carouselInner.appendChild(item);
+          });
+        }
+
+        // Plataformas
+        if (platformsEl) {
+          platformsEl.innerHTML = "";
+          project.platforms?.forEach((name) => {
+            const plat = platforms.find(
+              (p) => p.name.toLowerCase() === name.toLowerCase()
+            );
+            if (plat) {
+              const img = document.createElement("img");
+              img.src = `src/img/tecnologies/${plat.icon}.svg`;
+              img.alt = plat.name;
+              Object.assign(img.style, {
+                width: "24px",
+                height: "24px",
+                objectFit: "contain",
+                marginRight: "6px",
+              });
+              platformsEl.appendChild(img);
+            }
+          });
+        }
+
+        // Tecnologías
+        if (techEl) {
+          techEl.innerHTML = "";
+          project.tecnologies?.forEach((name) => {
+            const tech = tecnologias.find((t) => t.name === name);
+            if (tech) techEl.innerHTML += tech.icon;
+          });
+        }
+
+        // Proyectos relacionados
+        if (relatedContainer) {
+          relatedContainer.innerHTML = "";
+          projects
+            .filter((p) => p.related === project.related && p.id !== project.id)
+            .forEach((rel) => {
+              const card = document.createElement("div");
+              card.className = "card cardProjectsRelated";
+
+              const img = document.createElement("img");
+              img.src = rel.imageHero;
+              img.alt = rel.title;
+              img.className = "card-img";
+
+              card.appendChild(img);
+              card.addEventListener("click", () => {
+                window.location.href = `projects.html?id=${rel.id}`;
+              });
+
+              relatedContainer.appendChild(card);
+            });
+        }
+      };
+
+      
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        const thankYou = document.getElementById("thankYouMessage");
+
+        // Si ya envió el formulario antes
+        const alreadySent = localStorage.getItem("formSubmitted");
+
+        if (alreadySent === "true") {
+          form.style.display = "none";
+          thankYou.style.display = "block";
+        }
+
+        // Interceptar el envío y marcar como enviado
+        form.addEventListener("submit", function () {
+          localStorage.setItem("formSubmitted", "true");
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Inicializar Select2 en todos los selectores con la clase select2
+        $(".select2").select2();
+
+        const form = document.getElementById("contactForm");
+        const thankYou = document.getElementById("thankYouMessage");
+        const alreadySent = localStorage.getItem("formSubmitted");
+
+        if (alreadySent === "true") {
+          form.style.display = "none";
+          thankYou.style.display = "block";
+        }
+
+        form.addEventListener("submit", function () {
+          torage.setItem("formSubmitted", "true");
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $(".select2").select2({
+          theme: "default", // Usa el tema por defecto, pero lo estilizas tú
+        });
+      });
+    </script>
+  </body>
+</html>
